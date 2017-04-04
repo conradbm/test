@@ -13,21 +13,13 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Chicago crime data"),
+  titlePanel("Long, lat plot"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-       sliderInput("bins",
-                   "Latitude:",
-                   min = 41.70,
-                   max = 42.65,
-                   value = 30),
-       sliderInput("bins",
-                   "Longitude:",
-                   min = -87.95,
-                   max = -87.51,
-                   value = 30)
+      numericInput("lat", "lat:", 0),
+       numericInput("lat", "Long:", 0)
     ),
     
     # Show a plot of the generated distribution
