@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+source("/Users/bmc/Desktop/CSCI-49000/week_12/hw/functions.R")
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
@@ -18,16 +19,16 @@ shinyUI(fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-       sliderInput("bins",
+       sliderInput("latbins",
                    "Latitude:",
-                   min = 41.70,
-                   max = 42.65,
-                   value = 30),
-       sliderInput("bins",
+                   min = minLat,
+                   max = maxLat,
+                   value = meanLat),
+       sliderInput("lonbins",
                    "Longitude:",
-                   min = -87.95,
-                   max = -87.51,
-                   value = 30)
+                   min = minLon,
+                   max = maxLon,
+                   value = meanLon)
     ),
     
     # Show a plot of the generated distribution
