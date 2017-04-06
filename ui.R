@@ -8,7 +8,7 @@
 #
 
 library(shiny)
-source("/Users/bmc/Desktop/CSCI-49000/week_12/hw/functions.R")
+source("C:/Users/Jenn/Desktop/CSCI490/GroupProject/ShinyApp/ShinyApp/test/functions.R")
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(

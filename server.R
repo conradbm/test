@@ -11,8 +11,8 @@ library(shiny)
 library(ggmap)
 #install.packages("GeomRasterAnn")
 
-setwd("/Users/bmc/Desktop/CSCI-49000/week_12/hw/")
-source("/Users/bmc/Desktop/CSCI-49000/week_12/hw/functions.R")
+setwd("C:/Users/Jenn/Desktop/CSCI490/GroupProject/ShinyApp/ShinyApp/test/")
+source("C:/Users/Jenn/Desktop/CSCI490/GroupProject/ShinyApp/ShinyApp/test/functions.R")
 
 
 # Define server logic required to draw a histogram
@@ -30,16 +30,15 @@ shinyServer(function(input, output) {
     inputLat <- as.numeric(input$latbins)
     inputLon <- as.numeric(input$lonbins)
     
-    validHits <- df_lat_lon_type[which(df_lat_lon_type$latitude >= inputLat &
-                                        df_lat_lon_type$longitude >= inputLon),]
+    validHits <- df_lat_lon_type[which(df_lat_lon_type$latitude == inputLat &
+                                        df_lat_lon_type$longitude == inputLon),]
     
     cat("First Valid Hit: ", validHits$primary_type[1], "\n")
     
     # draw the histogram with the specified number of bins
     # hist(x, breaks = bins, col = 'darkgray', border = 'white')
     map <- get_map(location = "chicago", zoom = 11)
-    ggmap(map)  
-    #+ geom_point(data=crime_data[df_lat_lon_type$primary_type=="HOMICIDE",], aes(x=longitude, y=latitude))
+    ggmap(map) + geom_point(data=validHits, aes(x=longitude, y=latitude))
     
   })
   

@@ -2,7 +2,7 @@
 
 # Store functions in this file
 library("rjson")
-setwd("/Users/bmc/Desktop/CSCI-49000/week_12/hw/")
+setwd("C:/Users/Jenn/Desktop/CSCI490/GroupProject/ShinyApp/ShinyApp/test/")
 
 
 # Functions
