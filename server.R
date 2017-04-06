@@ -41,7 +41,7 @@ shinyServer(function(input, output) {
     # draw the histogram with the specified number of bins
     # hist(x, breaks = bins, col = 'darkgray', border = 'white')
     map <- get_map(location = "chicago", zoom = 11)
-    ggmap(map) + geom_point(data=validHits, aes(x=longitude, y=latitude))
+    ggmap(map) + geom_point(data=validHits, aes(x=longitude, y=latitude, color=primary_type))
     
   })
   
