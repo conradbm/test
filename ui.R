@@ -19,16 +19,26 @@ shinyUI(fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-       sliderInput("latbins",
-                   "Latitude:",
-                   min = minLat,
-                   max = maxLat,
-                   value = meanLat),
-       sliderInput("lonbins",
-                   "Longitude:",
-                   min = minLon,
-                   max = maxLon,
-                   value = meanLon)
+       sliderInput("bins",
+                   "Latitude Min:",
+                   min = 41.70,
+                   max = 42.65,
+                   value = 30),
+       sliderInput("bins",
+                   "Longitude Min:",
+                   min = -87.95,
+                   max = -87.51,
+                   value = 30),
+       sliderInput("bins",
+                   "Latitude Max:",
+                   min = 41.70,
+                   max = 42.65,
+                   value = 30),
+       sliderInput("bins",
+                   "Longitude Max:",
+                   min = -87.95,
+                   max = -87.51,
+                   value = 30)
     ),
     
     # Show a plot of the generated distribution
