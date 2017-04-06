@@ -26,12 +26,15 @@ shinyServer(function(input, output) {
     bins2 <- seq(minLon, maxLon, length.out = input$latbins + 1)
     
     cat(input$latbins, " ", input$lonbins  ,"\n")
+    cat(input$latbins2, " ", input$lonbins2, "\n")
     
     inputLat <- as.numeric(input$latbins)
     inputLon <- as.numeric(input$lonbins)
     
-    validHits <- df_lat_lon_type[which(df_lat_lon_type$latitude == inputLat &
-                                        df_lat_lon_type$longitude == inputLon),]
+    validHits <- df_lat_lon_type[which(df_lat_lon_type$latitude >= input$latbins &
+                                        df_lat_lon_type$latitude <= input$latbins2),]
+    validHits <- validHits[which(validHits$longitude >= input$lonbins &
+                                         validHits$longitude <= input$lonbins2),]
     
     cat("First Valid Hit: ", validHits$primary_type[1], "\n")
     
